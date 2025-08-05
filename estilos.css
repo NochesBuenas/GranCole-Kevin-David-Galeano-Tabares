@@ -4,6 +4,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal a nivel global */
 }
 
 /* Estilos personalizados para los iconos de Lucide */
@@ -32,29 +33,29 @@ html, body {
 /* Contenedor principal para la división de la pantalla */
 .main-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Por defecto, las secciones se apilan verticalmente en pantallas pequeñas */
     width: 100%;
     height: 100%; /* Asegura que el contenedor principal ocupe el 100% de la altura de su padre (body-container) */
 }
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 768px) { /* A partir de 768px (pantallas de tablet y escritorio) */
     .main-container {
-        flex-direction: row;
+        flex-direction: row; /* Las secciones se colocan una al lado de la otra */
     }
 }
 
 /* Sección izquierda (50% para futura integración de datos) */
 .left-section {
-    display: none; /* hidden */
+    display: none; /* Oculta la sección izquierda por defecto en pantallas pequeñas */
     background-color: #F3F4F6; /* bg-gray-100 */
     align-items: center;
     justify-content: center;
     padding: 2rem; /* p-8 */
     flex-grow: 1; /* Permite que crezca en altura si es necesario */
 }
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 768px) { /* A partir de 768px (pantallas de tablet y escritorio) */
     .left-section {
-        display: flex;
-        width: 50%; /* md:w-1/2 */
+        display: flex; /* Muestra la sección izquierda */
+        width: 50%; /* Ocupa el 50% del ancho */
     }
 }
 
@@ -75,23 +76,24 @@ html, body {
 
 /* Sección derecha (50% para el formulario de login) */
 .right-section {
-    width: 100%; /* w-full */
+    width: 100%; /* Ocupa el 100% del ancho por defecto en pantallas pequeñas */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem; /* p-4 */
+    padding: 0.5rem; /* Ajustado a 0.5rem (8px) para pantallas muy pequeñas */
     background-color: #DBEAFE; /* bg-blue-100 */
     flex-grow: 1; /* Permite que crezca en altura si es necesario */
 }
 @media (min-width: 640px) { /* sm breakpoint */
     .right-section {
-        padding: 2rem; /* sm:p-8 */
+        padding: 1.5rem; /* Se mantiene 1.5rem para pantallas medianas */
     }
 }
 @media (min-width: 768px) { /* md breakpoint */
     .right-section {
-        width: 50%; /* md:w-1/2 */
+        width: 50%; /* Ocupa el 50% del ancho en pantallas de tablet y escritorio */
+        padding: 2rem; /* Restaurado a 2rem para pantallas grandes */
     }
 }
 
@@ -143,6 +145,13 @@ html, body {
     width: 100%; /* w-full */
     max-width: 24rem; /* max-w-sm */
 }
+/* Ajuste de max-width para pantallas muy pequeñas */
+@media (max-width: 500px) {
+    .login-box {
+        max-width: 18rem; /* Reducido a 288px para pantallas muy estrechas */
+    }
+}
+
 
 .login-title {
     font-size: 1.25rem; /* text-xl */
