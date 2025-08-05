@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GranCole - Iniciar Sesión</title>
+    <!-- Carga de Lucide Icons para los iconos de usuario y contraseña -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="body-container">
+    <!-- Contenedor principal para la división de la pantalla -->
+    <div class="main-container">
+        <!-- Sección izquierda (50% para futura integración de datos) con fondo gris -->
+        <div class="left-section">
+            <div class="left-section-overlay"></div>
+            <div class="left-section-content">
+                <div class="grancole-pro-header">
+                    <img src="/GranCole-Kevin-David-Galeano-Tabares/images.jpg" alt="Grancole Pro Logo" class="grancole-pro-logo">
+                    <div class="grancole-pro-text">
+                        <p class="grancole-pro-title">Grancole Pro</p>
+                        <p class="grancole-pro-subtitle">Sistema de Gestión Educativa</p>
+                    </div>
+                </div>
+                <h1 class="left-section-main-title">Gestiona tu institución educativa de manera inteligente</h1>
+                <p class="left-section-description">Plataforma integral para administrar estudiantes, profesores, calificaciones, asistencia y mucho más en un solo lugar.</p>
+                <ul class="feature-list">
+                    <li><span class="feature-bullet"></span>Gestión completa de estudiantes y profesores</li>
+                    <li><span class="feature-bullet"></span>Sistema de calificaciones y boletines</li>
+                    <li><span class="feature-bullet"></span>Control de asistencia en tiempo real</li>
+                    <li><span class="feature-bullet"></span>Comunicación integrada y foros</li>
+                </ul>
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <p class="stat-number">1,234+</p>
+                        <p class="stat-label">Estudiantes</p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="stat-number">45+</p>
+                        <p class="stat-label">Cursos</p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="stat-number">98%</p>
+                        <p class="stat-label">Certificaciones</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección derecha (50% para el formulario de login) con fondo azul -->
+        <div class="right-section">
+            <!-- Contenedor para el logo y el texto de bienvenida, ahora fuera de la caja blanca -->
+            <div class="welcome-header-container">
+                <!-- Logo o escudo (reemplazar con tu imagen) -->
+                <!-- Se ha revertido a un placeholder para asegurar que la imagen se muestre correctamente en el Canvas. -->
+                <!-- Si deseas usar tu logo local, asegúrate de que la ruta sea correcta cuando lo pruebes en tu entorno. -->
+                <img src="/GranCole-Kevin-David-Galeano-Tabares/Logo GranCole.jpg" alt="GranCole Logo" class="logo-image">
+                <h1 class="welcome-title">Bienvenido a GranCole</h1>
+                <p class="welcome-subtitle">Inicia sesión para continuar</p>
+            </div>
+
+            <!-- La caja del formulario con la clase personalizada 'login-box' -->
+            <div class="login-box">
+                <h2 class="login-title">Iniciar Sesión</h2>
+                <p class="login-subtitle">Ingresa tus credenciales para acceder al sistema</p>
+
+                <form id="loginForm" class="login-form">
+                    <div>
+                        <label for="username" class="input-label">Usuario</label>
+                        <div class="input-container">
+                            <span class="input-icon-left">
+                                <!-- Icono de usuario de Lucide Icons -->
+                                <i data-lucide="user" class="icon"></i>
+                            </span>
+                            <input type="text" id="username" name="username" placeholder="0000000" class="input-field" required>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="password" class="input-label">Contraseña</label>
+                        <div class="input-container">
+                            <span class="input-icon-left">
+                                <!-- Icono de candado de Lucide Icons -->
+                                <i data-lucide="lock" class="icon"></i>
+                            </span>
+                            <input type="password" id="password" name="password" placeholder="••••••••" class="input-field password-field" required>
+                            <span class="input-icon-right" id="togglePassword">
+                                <!-- Icono de ojo de Lucide Icons -->
+                                <i data-lucide="eye" class="icon"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="forgot-password-container">
+                        <a href="#" class="forgot-password-link">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <button type="submit" class="login-button">
+                        Iniciar Sesión
+                        <!-- Puedes añadir un icono de flecha si lo deseas -->
+                        <i data-lucide="arrow-right" class="icon ml-2 inline-block"></i>
+                    </button>
+                </form>
+
+                <div class="footer-text-container">
+                    <p class="contact-admin-text">¿No tienes cuenta? <a href="#" class="contact-admin-link">Contacta al administrador</a></p>
+                    <p class="copyright-text">&copy; 2025 GranCole Pro. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="archivos.js"></script>
+</body>
+</html>

@@ -1,0 +1,401 @@
+/* Fuente Inter para todo el documento */
+html, body {
+    height: 100%; /* Asegura que html y body ocupen el 100% de la altura de la ventana */
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal a nivel global */
+}
+
+/* Estilos personalizados para los iconos de Lucide */
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.25em; /* Equivalente a text-xl para mantener el tamaño */
+    height: 1.25em;
+    stroke-width: 2;
+    stroke: currentColor;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.lucide-user, .lucide-lock, .lucide-eye, .lucide-eye-off {
+    color: #6B7280; /* Color gris para los iconos */
+}
+
+/* Contenedor del cuerpo */
+.body-container {
+    min-height: 100vh; /* Se mantiene para asegurar que el contenido mínimo sea la altura del viewport */
+    display: flex;
+    flex-grow: 1; /* Permite que el contenedor crezca y ocupe el espacio disponible */
+}
+
+/* Contenedor principal para la división de la pantalla */
+.main-container {
+    display: flex;
+    flex-direction: column; /* Por defecto, las secciones se apilan verticalmente en pantallas pequeñas */
+    width: 100%;
+    height: 100%; /* Asegura que el contenedor principal ocupe el 100% de la altura de su padre (body-container) */
+}
+@media (min-width: 768px) { /* A partir de 768px (pantallas de tablet y escritorio) */
+    .main-container {
+        flex-direction: row; /* Las secciones se colocan una al lado de la otra */
+    }
+}
+
+/* Sección izquierda (50% para futura integración de datos) */
+.left-section {
+    display: flex; /* Ahora siempre visible */
+    position: relative; /* Necesario para el overlay y el contenido */
+    background-color: #F3F4F6; /* bg-gray-100 - fallback color */
+    background-image: url('/GranCole-Kevin-David-Galeano-Tabares/estudiantes.jpg'); /* Placeholder para la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    padding: 1rem; /* Ajuste de padding para pantallas pequeñas */
+    flex-grow: 1; /* Permite que crezca en altura si es necesario */
+    color: white; /* Color de texto por defecto para el contenido de la sección izquierda */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+}
+@media (min-width: 640px) { /* sm breakpoint */
+    .left-section {
+        padding: 1.5rem; /* Padding para pantallas medianas */
+    }
+}
+@media (min-width: 768px) { /* A partir de 768px (pantallas de tablet y escritorio) */
+    .left-section {
+        width: 50%; /* Ocupa el 50% del ancho */
+        padding: 2rem; /* Padding original para escritorio */
+    }
+}
+
+/* Overlay para la imagen de fondo */
+.left-section-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay oscuro (50% de opacidad) */
+    z-index: 1; /* Asegura que el overlay esté sobre la imagen de fondo */
+}
+
+/* Contenido de la sección izquierda */
+.left-section-content {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté sobre el overlay */
+    max-width: 30rem; /* Limita el ancho del contenido para mejor legibilidad */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 1rem; /* Añade un poco de padding interno */
+}
+
+.grancole-pro-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+.grancole-pro-logo {
+    width: 2rem; /* Ajusta el tamaño del logo */
+    height: 2rem;
+    margin-right: 0.5rem; /* Espacio entre el logo y el texto */
+    border-radius: 0.25rem; /* Bordes ligeramente redondeados */
+    flex-shrink: 0; /* Evita que el logo se encoja */
+}
+
+.grancole-pro-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Alinea el texto a la izquierda, junto al logo */
+}
+
+.grancole-pro-title {
+    font-size: 1rem; /* text-base */
+    font-weight: 600; /* font-semibold */
+    color: #E0E7FF; /* Un azul claro */
+}
+
+.grancole-pro-subtitle {
+    font-size: 0.75rem; /* text-xs */
+    color: #BFDBFE; /* Un azul aún más claro */
+}
+
+.left-section-main-title {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 700; /* font-bold */
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #FFFFFF; /* Blanco */
+}
+
+.left-section-description {
+    font-size: 0.875rem; /* text-sm */
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    color: #E0E7FF; /* Azul claro */
+}
+
+.feature-list {
+    list-style: none; /* Elimina los puntos de lista predeterminados */
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem; /* text-sm */
+    color: #E0E7FF; /* Azul claro */
+}
+
+.feature-bullet {
+    display: inline-block;
+    width: 0.5rem; /* Tamaño del punto */
+    height: 0.5rem;
+    background-color: #22C55E; /* Verde para los puntos */
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    flex-shrink: 0; /* Evita que el punto se encoja */
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem; /* Espacio entre los elementos de estadísticas */
+    margin-top: 2rem;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1; /* Permite que los elementos crezcan y se encojan */
+    min-width: 80px; /* Ancho mínimo para cada estadística */
+}
+
+.stat-number {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 700; /* font-bold */
+    color: #FFFFFF; /* Blanco */
+    line-height: 1; /* Elimina espacio extra */
+}
+
+.stat-label {
+    font-size: 0.75rem; /* text-xs */
+    color: #BFDBFE; /* Azul aún más claro */
+    margin-top: 0.25rem;
+}
+
+
+/* Sección derecha (50% para el formulario de login) */
+.right-section {
+    width: 100%; /* Ocupa el 100% del ancho por defecto en pantallas pequeñas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem; /* Ajustado a 0.5rem (8px) para pantallas muy pequeñas */
+    background-color: #DBEAFE; /* bg-blue-100 */
+    flex-grow: 1; /* Permite que crezca en altura si es necesario */
+}
+@media (min-width: 640px) { /* sm breakpoint */
+    .right-section {
+        padding: 1.5rem; /* Se mantiene 1.5rem para pantallas medianas */
+    }
+}
+@media (min-width: 768px) { /* md breakpoint */
+    .right-section {
+        width: 50%; /* Ocupa el 50% del ancho en pantallas de tablet y escritorio */
+        padding: 2rem; /* Restaurado a 2rem para pantallas grandes */
+    }
+}
+
+/* Contenedor para el logo y el texto de bienvenida */
+.welcome-header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem; /* mb-6 */
+    text-align: center;
+}
+
+.logo-image {
+    width: 4rem; /* w-16 */
+    height: 4rem; /* h-16 */
+    margin-bottom: 1rem; /* mb-4 */
+    border-radius: 9999px; /* rounded-full */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+}
+
+.welcome-title {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700; /* font-bold */
+    color: #1F2937; /* text-gray-800 */
+}
+@media (min-width: 640px) { /* sm breakpoint */
+    .welcome-title {
+        font-size: 1.875rem; /* sm:text-3xl */
+    }
+}
+
+.welcome-subtitle {
+    font-size: 0.875rem; /* text-sm */
+    color: #6B7280; /* text-gray-500 */
+    margin-top: 0.25rem; /* mt-1 */
+}
+@media (min-width: 640px) { /* sm breakpoint */
+    .welcome-subtitle {
+        font-size: 1rem; /* sm:text-base */
+    }
+}
+
+/* Estilos para la caja del formulario de login */
+.login-box {
+    background-color: white;
+    padding: 0.75rem; /* p-3 */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+    width: 100%; /* w-full */
+    max-width: 24rem; /* max-w-sm */
+}
+/* Ajuste de max-width para pantallas muy pequeñas */
+@media (max-width: 500px) {
+    .login-box {
+        max-width: 18rem; /* Reducido a 288px para pantallas muy estrechas */
+    }
+}
+
+
+.login-title {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 600; /* font-semibold */
+    color: #374151; /* text-gray-700 */
+    margin-bottom: 0.25rem; /* mb-1 */
+}
+
+.login-subtitle {
+    font-size: 0.75rem; /* Aumentado de 10px a 0.75rem (text-xs) */
+    color: #4B5563; /* text-gray-600 */
+    margin-bottom: 0.75rem; /* mb-3 */
+}
+
+/* Estilos para el formulario */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.75rem; /* space-y-3 */
+}
+
+.input-label {
+    display: block;
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500; /* font-medium */
+    color: #374151; /* text-gray-700 */
+    margin-bottom: 0.25rem; /* mb-1 */
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon-left {
+    position: absolute;
+    left: 0.75rem; /* left-3 */
+}
+
+.input-field {
+    padding-left: 2.5rem; /* pl-10 */
+    padding-right: 1rem; /* pr-4 */
+    padding-top: 0.5rem; /* py-2 */
+    padding-bottom: 0.5rem; /* py-2 */
+    width: 100%; /* w-full */
+    border-width: 1px; /* Restaurado el borde */
+    border-color: #D1D5DB; /* Restaurado el color del borde */
+    border-radius: 0.5rem; /* rounded-lg */
+    transition-property: all; /* transition */
+    transition-duration: 200ms; /* duration-200 */
+    box-shadow: none; /* Eliminado el box-shadow sutil si no se desea con el borde */
+}
+.input-field:focus {
+    outline: 2px solid transparent; /* focus:outline-none */
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px #3B82F6; /* focus:ring-2 focus:ring-blue-500 */
+    border-color: transparent; /* focus:border-transparent */
+}
+
+.password-field {
+    padding-right: 2.5rem; /* pr-10 */
+}
+
+.input-icon-right {
+    position: absolute;
+    right: 0.75rem; /* right-3 */
+    cursor: pointer;
+}
+
+.forgot-password-container {
+    text-align: right;
+}
+
+.forgot-password-link {
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500; /* font-medium */
+    color: #2563EB; /* text-blue-600 */
+    text-decoration: none;
+}
+.forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+.login-button {
+    width: 100%; /* w-full */
+    background-color: #2563EB; /* bg-blue-600 */
+    color: white; /* text-white */
+    padding-top: 0.625rem; /* py-2.5 */
+    padding-bottom: 0.625rem; /* py-2.5 */
+    border-radius: 0.5rem; /* rounded-lg */
+    font-weight: 600; /* font-semibold */
+    font-size: 1.125rem; /* text-lg */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+    transition-property: background-color; /* transition */
+    transition-duration: 200ms; /* duration-200 */
+    display: flex; /* Added for icon alignment */
+    justify-content: center; /* Added for icon alignment */
+    align-items: center; /* Added for icon alignment */
+}
+.login-button:hover {
+    background-color: #1D4ED8; /* hover:bg-blue-700 */
+}
+.login-button:focus {
+    outline: 2px solid transparent; /* focus:outline-none */
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px #3B82F6, 0 0 0 4px rgba(59, 130, 246, 0.5); /* focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 */
+}
+
+.footer-text-container {
+    text-align: center;
+    margin-top: 0.75rem; /* mt-3 */
+    font-size: 0.875rem; /* text-sm */
+}
+
+.contact-admin-text {
+    color: #4B5563; /* text-gray-600 */
+}
+
+.contact-admin-link {
+    color: #2563EB; /* text-blue-600 */
+    text-decoration: none;
+    font-weight: 500; /* font-medium */
+}
+.contact-admin-link:hover {
+    text-decoration: underline;
+}
+
+.copyright-text {
+    color: #6B7280; /* text-gray-500 */
+    margin-top: 0.25rem; /* mt-1 */
+}
